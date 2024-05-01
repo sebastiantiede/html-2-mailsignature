@@ -13,9 +13,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  build: {
+    rollupOptions: {
+      external: ['vueMailSignatureConverter']
+    }
+  },
   vue: {
     publicPath: process.env.NODE_ENV === 'production'
       ? '/html-2-mailsignature/'
-      : '/'
+      : '/',
   }
 })
