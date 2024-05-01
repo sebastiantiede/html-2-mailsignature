@@ -1,35 +1,29 @@
-name: Deploy Vue App to GitHub Pages
-
+name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - main  # Der Branch, auf dem deine Entwicklung stattfindet
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
+    - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '16'  # Stelle sicher, dass die Version zu deinem Projekt passt
 
-    - name: Install Dependencies
+    - name: Install dependencies
       run: npm install
 
     - name: Build
       run: npm run build
 
-    - name: Debug
-      run: |
-        ls -la
-
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.5
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        branch: gh-pages
-        folder: ./dist
-        clean: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # Der Ordner, in den dein Build skriptiert, typischerweise `dist` für Vue-Projekte

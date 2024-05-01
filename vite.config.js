@@ -12,5 +12,10 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  vue: {
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/html-2-mailsignature/'
+      : '/'
   }
 })
