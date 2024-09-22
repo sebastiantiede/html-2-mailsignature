@@ -1,0 +1,34 @@
+{
+  "hash": "c8ec6315",
+  "configHash": "ab02c247",
+  "lockfileHash": "31979ddc",
+  "browserHash": "6f29fad8",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "a7bc54e1",
+      "needsInterop": false
+    },
+    "vueMailSignatureConverter": {
+      "src": "../../node_modules/vuemailsignatureconverter/index.ts",
+      "file": "vueMailSignatureConverter.js",
+      "fileHash": "b3939b6c",
+      "needsInterop": false
+    },
+    "emailjs-mime-codec": {
+      "src": "../../node_modules/emailjs-mime-codec/dist/mimecodec.js",
+      "file": "emailjs-mime-codec.js",
+      "fileHash": "d17c58fc",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-S3UI46G6": {
+      "file": "chunk-S3UI46G6.js"
+    },
+    "chunk-NIBQISYW": {
+      "file": "chunk-NIBQISYW.js"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/vuemailsignatureconverter/index.ts"],
+  "sourcesContent": ["import { defineAsyncComponent } from 'vue'\n\nexport const mailSignatureConverter = (app) => {\n  app.component(\n    \"mailSignatureConverter\",\n    defineAsyncComponent(() => import(\"./components/converter.vue\"))\n  )\n\n  app.component(\n    \"mailSignatureEditable\",\n    defineAsyncComponent(() => import(\"./components/editable.vue\"))\n  )\n\n  app.component(\n    \"mailClientWindow\",\n    defineAsyncComponent(() => import(\"./components/mailClientWindow.vue\"))\n  )\n}"],
+  "mappings": ";;;;;;AAEO,IAAM,yBAAyB,CAAC,QAAQ;AAC7C,MAAI;AAAA,IACF;AAAA,IACA,qBAAqB,MAAM,OAAO,oIAA4B,CAAC;AAAA,EACjE;AAEA,MAAI;AAAA,IACF;AAAA,IACA,qBAAqB,MAAM,OAAO,mIAA2B,CAAC;AAAA,EAChE;AAEA,MAAI;AAAA,IACF;AAAA,IACA,qBAAqB,MAAM,OAAO,2IAAmC,CAAC;AAAA,EACxE;AACF;",
+  "names": []
+}
