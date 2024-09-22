@@ -1,0 +1,29 @@
+name: Build and Deploy v1
+on:
+  push:
+    branches:
+      - main  # Der Branch, auf dem deine Entwicklung stattfindet
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Stelle sicher, dass die Version zu deinem Projekt passt
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run buildGithub
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # Der Ordner, in den dein Build skriptiert, typischerweise `dist` für Vue-Projekte
