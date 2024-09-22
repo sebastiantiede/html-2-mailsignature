@@ -18,9 +18,7 @@ export default defineConfig({
       external: ['vueMailSignatureConverter']
     }
   },
-  vue: {
-    publicPath: process.env.NODE_ENV === 'production'
-      ? '/html-2-mailsignature/'
-      : '/',
-  }
+  base: process.env.NODE_ENV === 'production'
+    ? '/html-2-mailsignature/'  // Dein Repository-Name
+    : '/',
 })
